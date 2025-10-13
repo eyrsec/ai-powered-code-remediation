@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Login</h1>
+    {% if message %}
+    <p style="color:red;">{{ message }}</p>
+    {% endif %}
+
+    <form method="post" action="/login">
+      <!-- login code is today's date in yymmdd format -->
+      <label for="code">Enter 6-digit PIN to login:</label>
+      <input type="text" name="code" id="code" maxlength="6" />
+      <input type="hidden" name="next" value="{{ redirect_target }}" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <p><a href="/home">Back to home</a></p>
+  </body>
+</html>

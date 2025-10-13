@@ -1,0 +1,19 @@
+[project]
+name = "ai-powered-remediation"
+version = "0.1.0"
+description = "Vulnerable FastAPI app"
+authors = [
+    {name = "Nandita Joshi",email = "eyrsec@gmail.com"}
+]
+package-mode = false
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi (>=0.119.0,<0.120.0)",
+    "uvicorn (>=0.37.0,<0.38.0)",
+    "jinja2 (>=3.1.6,<4.0.0)",
+    "python-multipart (>=0.0.9,<0.1.0)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

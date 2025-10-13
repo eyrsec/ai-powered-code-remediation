@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vulnerable Home</title>
+  </head>
+  <body>
+    <h1>Welcome to the vulnerable FastAPI app</h1>
+
+    <p>Search for anything (reflected XSS demo):</p>
+    <form method="post" action="/home">
+      <input type="text" name="search" placeholder="Enter search term" />
+      <button type="submit">Search</button>
+    </form>
+
+    {% if error_message %}
+    <p style="color:red;">{{ error_message }}</p>
+    {% endif %}
+
+    {% if search_term %}
+    <div>
+      <strong>Results for:</strong>
+      <span>{{ search_term|safe }}</span>
+    </div>
+    {% endif %}
+
+    <p>
+      <a href="/home?next=/login">Go to login page</a>
+    </p>
+
+    <!-- Sensitive info: secret content also available at /secrets -->
+  </body>
+</html>
