@@ -5,7 +5,6 @@ from fastapi.responses import HTMLResponse, RedirectResponse, PlainTextResponse
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.sessions import SessionMiddleware
 
-
 app = FastAPI()
 
 # Hard-coded secret key for sessions (intentional vulnerability)
